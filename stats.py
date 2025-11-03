@@ -17,3 +17,15 @@ def character_count ():
         else:
             dict_chars[c] = 1
     return dict_chars
+
+def sorter():
+    counts = character_count()
+    items = []
+    for ch, n in counts.items():
+        items.append({"char": ch, "num": n})
+    
+    def sort_on(item):
+        return item["num"]
+    
+    items.sort(key=sort_on, reverse=True)
+    return items 
